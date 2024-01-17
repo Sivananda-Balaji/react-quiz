@@ -25,7 +25,9 @@ const QuizProvider = ({ children }) => {
   useEffect(() => {
     const getQuestions = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/questions");
+        const response = await axios.get(
+          "https://react-quiz-data-wtnw.onrender.com/api/questions"
+        );
         dispatch({ type: "dataReceived", payload: response.data });
       } catch (err) {
         console.log(err);
